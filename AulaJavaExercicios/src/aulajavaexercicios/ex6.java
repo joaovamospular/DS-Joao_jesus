@@ -10,8 +10,15 @@ package aulajavaexercicios;
  */
 public class ex6 {
     public static void main(String[] args) {
+        System.out.println("Esse codigo, calculara quanto combústivel uma saveiro gasta!\n");
         
-  int CombustivelNoTanque
+ float LitroPorKm = 7.5f;
+ int DistanciaPercorrida = 17;
+ float CombustivelGasto;
+ 
+ CombustivelGasto = DistanciaPercorrida * LitroPorKm;
+ 
+        System.out.println("A quantidade de combústivel gasto foi : "+CombustivelGasto+" Litros .");
     }
     
 }
