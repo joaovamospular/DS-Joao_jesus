@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
  */
+package aula.pkg03;
 
 /**
  *
- * @author CAMARGO
+ * @author Fernando
  */
 import java.util.Scanner;
-public class Exercicio03 {
+public class Exercicio10 {
 
     /**
      * @param args the command line arguments
@@ -16,18 +17,20 @@ public class Exercicio03 {
     public static void main(String args[]) {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Me de 10 numeros aleatorios");
-        int i = 0;
-        float numero_maior = 0;
-        while(i < 10)
+        int n = 0;
+        do{
+        System.out.println("Digite um numero n(>0)");
+        n = entrada.nextInt();
+        if(n <= 0 )
         {
-            i++;
-                float numero = entrada.nextFloat();
-                   if(numero > numero_maior)
-                   {
-                       numero_maior = numero;
-                   }
+            System.out.println("VALOR INVALIDO! tente novamente");
         }
-        System.out.println("O maior numero é"+numero_maior);
+        }
+        while(n <= 0 );
+        System.out.println("contando de 1 a "+n);
+        
+                
+                    
+                
     }
 }

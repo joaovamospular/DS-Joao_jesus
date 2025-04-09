@@ -8,7 +8,7 @@
  * @author CAMARGO
  */
 import java.util.Scanner;
-public class Exercicio03 {
+public class Exercicio04 {
 
     /**
      * @param args the command line arguments
@@ -19,6 +19,7 @@ public class Exercicio03 {
         System.out.println("Me de 10 numeros aleatorios");
         int i = 0;
         float numero_maior = 0;
+        float segundo_maior = 0;
         while(i < 10)
         {
             i++;
@@ -27,7 +28,16 @@ public class Exercicio03 {
                    {
                        numero_maior = numero;
                    }
+                   
+                   else if(numero < numero_maior)
+                   {
+                       if(segundo_maior < numero && numero < numero_maior)
+                       {
+                           segundo_maior = numero;
+                       }
+                   }
         }
         System.out.println("O maior numero é"+numero_maior);
+        System.out.println("O segundo maior numero é"+segundo_maior);
     }
 }
