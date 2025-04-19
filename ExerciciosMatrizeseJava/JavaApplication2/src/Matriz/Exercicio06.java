@@ -6,21 +6,26 @@ package Matriz;
 
 /**
  *
- * @author CAMARGO
+ * @author joaod
  */
-public class Exercicio02 {
+public class Exercicio06 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         // TODO code application logic here
-             int[] ten = {2, 4,6,8,10,12,14,16,18,20};
-             int j = 0;
-        for ( int i = 0; i < ten.length; i++)
-        {
-            j+=ten[i];
-        }
-  System.out.println("a soma é : "+j);
+        
+        int[] vetor = {1,2,3,4,5,6,7,8,9,10};
+        
+        
+        for(int i = 0; i< vetor.length; i++){
+        if(i%2 == 0)
+            {
+                System.out.println("posições pares: "+ i +" | numeros nas posições: "+vetor[i]);
+            }
+        
+        
+                                            }
     }
 }
