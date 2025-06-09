@@ -1,92 +1,76 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
- */
-
 package poo_exemplo;
-import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Televisao {
 
-    // declaração das variaveis
+    // variaveis da tvzinha
     String ModeloTelevisao;
     float Canal;
     String ModoDeImagem;
     int Volume;
     String LigadaOuDesligada;
 
-    // Scanner pra utilizar nos metodos
-    Scanner TV = new Scanner(System.in);
+    void LigarTelevisao() {
+        String resposta = JOptionPane.showInputDialog("Voce quer liga a televisao? (sim/nao)").toLowerCase();
 
-    void LigarTelevisao(){
-
-        System.out.println("Voce Deseja ligar a televisao? ");
-        String TelevisaoOnOuOff = TV.nextLine ().toLowerCase();
-
-        if(TelevisaoOnOuOff.equals("sim")){
+        if (resposta.equals("sim")) {
             LigadaOuDesligada = "Ligada";
-            System.out.println("A Televisao está: "+LigadaOuDesligada);
-        }
-
-        if(TelevisaoOnOuOff.equals("nao")){
+            JOptionPane.showMessageDialog(null, "A TV tá " + LigadaOuDesligada);
+        } else if (resposta.equals("nao")) {
             LigadaOuDesligada = "Desligada";
-            System.out.println("A Televisao continuara"+LigadaOuDesligada);
-            System.exit(0); // o programa vai parar se a resposta for não
+            JOptionPane.showMessageDialog(null, "blz, a tv fico " + LigadaOuDesligada);
+            System.exit(0);
+        } else {
+            JOptionPane.showMessageDialog(null, "resposta invalida, programa vai pará");
+            System.exit(0);
         }
     }
 
-    //Metodo para aumentar o volume da televisao
-    void AumentarVolume(){
+    void AumentarVolume() {
         Volume += 15;
-        System.out.println(ModeloTelevisao+" Aumentou o volume, volume atual "+Volume);
+        JOptionPane.showMessageDialog(null, ModeloTelevisao + " aumentou o volume, agora tá em: " + Volume);
     }
 
-    //Metodo para diminuir o volume da televisao
-    void DiminuirVolume () {
-        if (Volume >=5){
+    void DiminuirVolume() {
+        if (Volume >= 5) {
             Volume -= 5;
         } else {
             Volume = 0;
         }
-        System.out.println(ModeloTelevisao+" Diminui o volume, volume atual"+ Volume);
+        JOptionPane.showMessageDialog(null, ModeloTelevisao + " diminuiu o volume, agora ta em: " + Volume);
     }
 
-    //metodo para mudar o modo de imagem
-    void MudarModoImagem () {
+    void MudarModoImagem() {
         ModoDeImagem = "Suave";
+        String mudar = JOptionPane.showInputDialog("Quer muda o modo de imagem? (sim/nao)").toLowerCase();
 
-        System.out.print("Deseja mudar o modo de imagem?  ");
-        String SimOuNao = TV.nextLine().toLowerCase();
-
-        if (SimOuNao.equals("sim")){
-
-            System.out.println("Escolha o modo de imagem Normal, Esportes, Usúario: ");
-            String Mododeimg = TV.nextLine ().toLowerCase();
-
-            if (Mododeimg.equals("normal")){
-                ModoDeImagem = "Normal";
+        if (mudar.equals("sim")) {
+            String novoModo = JOptionPane.showInputDialog("Escolhe ae: Normal, Esportes ou Usuario").toLowerCase();
+            switch (novoModo) {
+                case "normal":
+                    ModoDeImagem = "Normal";
+                    break;
+                case "esportes":
+                    ModoDeImagem = "Esportes";
+                    break;
+                case "usuario":
+                    ModoDeImagem = "Usuário";
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "modo n reconhecido, vamo deixa no suave msm");
             }
-            if (Mododeimg.equals("esportes")){
-                ModoDeImagem = "Esportes";
-            }
-            if (Mododeimg.equals("usúario")){
-                ModoDeImagem = "Usúario";
-            }
-
-        }
-
-        else {
-            System.out.println("O modo de imagem ainda é "+ModoDeImagem);
+        } else {
+            JOptionPane.showMessageDialog(null, "blz, modo continua como: " + ModoDeImagem);
         }
     }
 
     void exibirInformacoes() {
-        System.out.println("Exibição das informações: \n");
-        System.out.println("Modelo da Televisao : " + ModeloTelevisao);
-        System.out.println("A Televisao está "+ LigadaOuDesligada);
-        System.out.println("Canal: " + Canal);
-        System.out.println("O volume da televisao é : "+ Volume);
-        System.out.println("O modo de imagem é "+ ModoDeImagem);
+        String info = "Modelo da TV: " + ModeloTelevisao +
+                "\nEstado: " + LigadaOuDesligada +
+                "\nCanal: " + Canal +
+                "\nVolume: " + Volume +
+                "\nModo de imagem: " + ModoDeImagem;
+        JOptionPane.showMessageDialog(null, info, "Info da TV", JOptionPane.INFORMATION_MESSAGE);
     }
-
 }
