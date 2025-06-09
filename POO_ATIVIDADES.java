@@ -27,7 +27,7 @@ class Carro {
         /*  metodo/maneira de contruir parametros. Metodo construtor, oque é um metodo construtotror? é um metodo que é
         *   automaticamente chamado quando um objeto é criado, objeto esse que seria o carro, ele serve para inicializar os
         *   atributos do objeto (carro).
-        */
+
         Carro (String m, int a, int p){
         /* os atributos recebem valor aqui*/
         this.modelo = m;

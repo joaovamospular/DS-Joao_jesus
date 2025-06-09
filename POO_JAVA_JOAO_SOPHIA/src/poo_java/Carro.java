@@ -1,12 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package poo_java;
-import java.util.Scanner;
+package poo_.atividades.POO_JAVA_JOAO_SOPHIA.src.poo_java;
+
+import javax.swing.JOptionPane;
+
 public class Carro {
-    
-// declaração das variaveis
+
+    // variavel q guarda as coisa do carro
     String Modelo;
     int ano;
     String Cor;
@@ -14,56 +12,78 @@ public class Carro {
     int velocidade;
     boolean portaAberta;
 
-    
-       
-    
-   // declaração de metodos
-    void abrirPorta () {
-        portaAberta = true;
-        System.out.println(Modelo + " abriu a porta. Atualmente ela está aberta: " + portaAberta + ". O carro não ligará.");
+   // abre a porta ai se quiser senao nao da pra anda
+   void abrirPorta() {
+    int resposta = JOptionPane.NO_OPTION;
+    while (resposta != JOptionPane.YES_OPTION) {
+        resposta = JOptionPane.showConfirmDialog(
+                null,
+                "Você quer abrir a porta?(o davi brito abriria )",
+                "Abrir a porta",
+                JOptionPane.YES_NO_OPTION);
+
+        if (resposta == JOptionPane.YES_OPTION) {
+            portaAberta = true; // porta foi abertaa
+            JOptionPane.showMessageDialog(null, "Porta aberta! A viagem pode ser iniciada.");
+        } else if (resposta == JOptionPane.NO_OPTION) {
+            JOptionPane.showMessageDialog(null, "Porta fechada! Não é possível iniciar a viagem.");
+        }
+
+        // se fecho a janelinha para tudo kk
+        if (resposta == JOptionPane.CLOSED_OPTION) {
+            JOptionPane.showMessageDialog(null, "Janela fechada. Encerrando operação.");
+            break;
+        }
     }
-   // declaração de metodos
+}
+
+    // fecha a porta se tiver aberta senao diz q ja ta fechada
     void fecharPorta() {
         if (portaAberta) {
             portaAberta = false;
-            System.out.println("A porta está fechada, pode começar o trajeto.\n");
+            JOptionPane.showMessageDialog(null, "A porta foi fechada. Pode começa o trajeto");
         } else {
-            System.out.println("A porta já está fechada.\n");
+            JOptionPane.showMessageDialog(null, "A porta ja ta fechada.");
         }
     }
-    
-    // declaração de metodos
-    void acelerar(){
-        
-      velocidade += 20;
-        System.out.println(Modelo+" Acelerou, velocidade atual "+velocidade+" km/h");
-     }
-    // declaração de metodos
+
+    // acelera ai man
+    void acelerar() {
+        velocidade += 20;
+        JOptionPane.showMessageDialog(null, Modelo + " acelerou. Velocidade atual: " + velocidade + " km/h");
+    }
+
+    // pisa no freio se tiver velo
     void frear() {
-            if (velocidade >= 10) {
-                velocidade -= 10;
-            } else {
-                velocidade = 0;
-            }
-            System.out.println("Freando... Velocidade atual:  " + velocidade + " km/h");
+        if (velocidade >= 10) {
+            velocidade -= 10;
+        } else {
+            velocidade = 0; // para de vez
         }
-    
-    
-    
-   
+        JOptionPane.showMessageDialog(null, "Freando Velocidade agora é: " + velocidade + " km/h");
+    }
 
-     // declaração de metodos
+    // mostra as coisa do carro q foi colocado la em cima
     void exibirInformacoes() {
-            System.out.println("Modelo: " + Modelo);
-            System.out.println("Ano: " + ano);
-            System.out.println("Cor: " + Cor);
-            System.out.println("Velocidade: " + velocidade + " km/h");
-        }
-    
-    
+        String info = "Modelo: " + Modelo
+                + "\nAno: " + ano
+                + "\nCor: " + Cor
+                + "\nVelocidade: " + velocidade + " km/h";
+        JOptionPane.showMessageDialog(null, info, "Info do Carro", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    // metodo main q roda tudo
+    public static void main(String[] args) {
+        Carro carro = new Carro();
+        carro.Modelo = JOptionPane.showInputDialog("bota o modelo do carro:");
+        carro.ano = Integer.parseInt(JOptionPane.showInputDialog("ano do carro ai:"));
+        carro.Cor = JOptionPane.showInputDialog("qual cor do carro?");
+        carro.velocidade = 0;
+
+        carro.abrirPorta();
+        carro.fecharPorta();
+        carro.acelerar();
+        carro.frear();
+        carro.exibirInformacoes();
+    }
 }
-
-        
-    
-    
-
