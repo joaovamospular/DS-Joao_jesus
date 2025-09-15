@@ -40,6 +40,51 @@ Este repositório reúne os trabalhos desenvolvidos ao longo do bimestre na disc
 - Controle de vacinação pendente, finalizada
 - Lógica de intervalo entre doses, relatórios de vacinação
 
+ **Calculadora (converterinteiro)**
+
+Uma implementação simples de uma calculadora para converter números inteiros em outras bases. Este projeto foi desenvolvido para ensinar a conversão de números em diferentes bases e como podemos manipular entradas e saídas numéricas.
+
+#### Funcionalidades:
+- Converte números inteiros em binário, octal e hexadecimal.
+- Interface simples para testes e demonstrações de conversões.
+
+#### Como usar:
+1. Clone o repositório.
+2. Compile o código e execute a aplicação.
+3. Insira o número inteiro e escolha a base de conversão.
+
+---
+
+### 2. **Java Calculadora**
+
+Uma implementação de uma calculadora em Java, com operações básicas como adição, subtração, multiplicação e divisão.
+
+#### Funcionalidades:
+- Realiza operações matemáticas básicas.
+- Interface de usuário simples para facilitar a interação.
+
+#### Como usar:
+1. Clone o repositório.
+2. Compile o código Java.
+3. Execute a aplicação e insira os números para realizar os cálculos.
+
+---
+
+## Como rodar os projetos:
+
+### Requisitos:
+- **Para a calculadora (converterinteiro):**  
+  Linguagem: Python  
+  - Para rodar o projeto, basta ter o Python 3.x instalado.
+
+- **Para a Java Calculadora:**  
+  Linguagem: Java  
+  - Para rodar o projeto, basta ter o JDK 8 ou superior instalado.
+
+### Passos para rodar:
+1. Clone o repositório.
+2. Navegue até o diretório do projeto.
+3. Siga as instruções específicas de cada projeto para rodar a aplicação.
 
 
 
